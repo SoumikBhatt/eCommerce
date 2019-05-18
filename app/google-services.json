@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "182768252002",
+    "firebase_url": "https://e-commerce-70528.firebaseio.com",
+    "project_id": "e-commerce-70528",
+    "storage_bucket": "e-commerce-70528.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182768252002:android:148c3cb21f096070",
+        "android_client_info": {
+          "package_name": "com.soumik.e_commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182768252002-m56v2u8nmv86td67mgfhn5l31m9b52gp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.soumik.e_commerce",
+            "certificate_hash": "6c8f6fbd1774c06b7e35567549c0e6b1531dd8db"
+          }
+        },
+        {
+          "client_id": "182768252002-8dpkivadn1fde9mjfrq8bpm5duca7oah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaxuwVK7Dn7o-plPqbMqZZP_Scm10hPAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182768252002-8dpkivadn1fde9mjfrq8bpm5duca7oah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

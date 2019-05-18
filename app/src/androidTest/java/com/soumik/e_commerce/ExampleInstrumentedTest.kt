@@ -1,4 +1,4 @@
-package com.example.e_commerce
+package com.soumik.e_commerce
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

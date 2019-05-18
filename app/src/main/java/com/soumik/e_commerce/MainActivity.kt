@@ -1,4 +1,4 @@
-package com.example.e_commerce
+package com.soumik.e_commerce
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

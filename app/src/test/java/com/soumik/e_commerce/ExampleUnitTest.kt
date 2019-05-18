@@ -1,4 +1,4 @@
-package com.example.e_commerce
+package com.soumik.e_commerce
 
 import org.junit.Test
 
