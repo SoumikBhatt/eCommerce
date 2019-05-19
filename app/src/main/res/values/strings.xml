@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">E-Commerce</string>
+
+    <string name="text_default">14sp</string>
+    <string name="text_big">16sp</string>
+    <string name="text_bigger">18sp</string>
+    <string name="text_biggest">24sp</string>
+    <string name="app_slogan">Find and Buy your needs</string>
 </resources>
