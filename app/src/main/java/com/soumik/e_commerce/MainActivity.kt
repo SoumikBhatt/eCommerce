@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.soumik.e_commerce.activities.LoginActivity
+import com.soumik.e_commerce.activities.SignupActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,11 @@ class MainActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener {
             var intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        btn_sign_up.setOnClickListener{
+            var intent = Intent(this,SignupActivity::class.java)
             startActivity(intent)
         }
     }
