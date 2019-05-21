@@ -6,10 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import com.google.firebase.database.*
-import com.soumik.e_commerce.MainActivity
 import com.soumik.e_commerce.R
-import com.soumik.e_commerce.utils.hideProgressBar
-import com.soumik.e_commerce.utils.showProgressBar
 import com.soumik.e_commerce.utils.showToast
 import kotlinx.android.synthetic.main.activity_signup.*
 import kotlin.collections.HashMap
@@ -82,11 +79,11 @@ class SignupActivity : AppCompatActivity() {
                         }
 
                 } else {
-                    showToast(applicationContext, "This $userPhoneNumber already exists")
+                    showToast(applicationContext, "This $userPhoneNumber number already exists")
 //                    hideProgressBar()
                     progressDialog.dismiss()
                     showToast(applicationContext,"Please try again with another phone number")
-                    startActivity(Intent(this@SignupActivity,MainActivity::class.java))
+                    startActivity(Intent(this@SignupActivity, MainActivity::class.java))
                     finish()
                 }
             }

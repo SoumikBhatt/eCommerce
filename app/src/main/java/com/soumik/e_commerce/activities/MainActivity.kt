@@ -1,11 +1,9 @@
-package com.soumik.e_commerce
+package com.soumik.e_commerce.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.soumik.e_commerce.activities.LoginActivity
-import com.soumik.e_commerce.activities.SignupActivity
+import com.soumik.e_commerce.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
