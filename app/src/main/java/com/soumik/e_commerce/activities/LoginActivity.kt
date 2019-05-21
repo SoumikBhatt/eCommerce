@@ -7,20 +7,23 @@ import android.os.Bundle
 import android.text.TextUtils
 import com.google.firebase.database.*
 import com.soumik.e_commerce.R
+import com.soumik.e_commerce.data.DataHandling
 import com.soumik.e_commerce.models.Users
+import com.soumik.e_commerce.utils.parentDatabase
 import com.soumik.e_commerce.utils.showToast
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
     lateinit var progressDialog: ProgressDialog
-    var parentDatabase = "Users"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         progressDialog = ProgressDialog(this)
+
+        DataHandling.getPaperContext(applicationContext)
 
         btn_do_login.setOnClickListener {
             validateLoginFields()
@@ -47,6 +50,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun allowAcess(phoneNumber: String, password: String) {
+
+        if (cb_remember_me.isChecked){
+            DataHandling.setUserPhoneNumber(phoneNumber)
+            DataHandling.setUserPassword(password)
+        }
+
         val rootref: DatabaseReference = FirebaseDatabase.getInstance().reference
 
         rootref.addListenerForSingleValueEvent(object : ValueEventListener {
