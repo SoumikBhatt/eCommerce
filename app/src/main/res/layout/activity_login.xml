@@ -12,7 +12,7 @@
     <ImageView android:layout_width="300dp"
                android:layout_height="100dp"
                android:layout_gravity="center"
-               android:layout_marginTop="200dp"
+               android:layout_marginTop="150dp"
                android:src="@drawable/applogo"/>
 
     <EditText
@@ -128,5 +128,18 @@
                 android:layout_centerVertical="true" android:visibility="invisible"/>
 
     </RelativeLayout>
+
+    <Button
+            android:id="@+id/bt_facebook_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fb_btn_design"
+            android:text="Login With Facebook"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:padding="17dp"
+            android:textSize="18sp"/>
 
 </LinearLayout>

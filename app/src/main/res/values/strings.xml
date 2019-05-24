@@ -6,4 +6,8 @@
     <string name="text_bigger">18sp</string>
     <string name="text_biggest">24sp</string>
     <string name="app_slogan">Find and Buy your needs</string>
+
+    <string name="facebook_app_id">189709105247779</string>
+    <string name="fb_login_protocol_scheme">fb189709105247779</string>
+
 </resources>

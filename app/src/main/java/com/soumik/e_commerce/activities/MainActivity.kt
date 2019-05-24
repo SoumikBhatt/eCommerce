@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.soumik.e_commerce.R
 import com.soumik.e_commerce.data.DataHandling
@@ -16,12 +17,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var progressDialog: ProgressDialog
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         progressDialog = ProgressDialog(this)
+
+         auth = FirebaseAuth.getInstance()
 
         DataHandling.getPaperContext(applicationContext)
 
@@ -43,12 +47,27 @@ class MainActivity : AppCompatActivity() {
             if (!TextUtils.isEmpty(phone) && !TextUtils.isEmpty(password)){
                 allowAccess(phone,password)
 
-                progressDialog.setTitle("Already Logging In")
+                progressDialog.setTitle("Matching the Credentials")
                 progressDialog.setMessage("Please wait")
                 progressDialog.setCanceledOnTouchOutside(false)
                 progressDialog.show()
             }
         }
+    }
+
+
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+
+        if (currentUser!=null){
+            showToast(applicationContext, "Logged In Successfully!")
+            progressDialog.dismiss()
+            startActivity(Intent(this@MainActivity,HomeActivity::class.java))
+            finish()
+        }
+
     }
 
     private fun allowAccess(phoneNumber: String?, password: String) {
