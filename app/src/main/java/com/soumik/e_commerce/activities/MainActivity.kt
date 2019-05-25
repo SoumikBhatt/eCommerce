@@ -10,7 +10,6 @@ import com.google.firebase.database.*
 import com.soumik.e_commerce.R
 import com.soumik.e_commerce.data.DataHandling
 import com.soumik.e_commerce.models.Users
-import com.soumik.e_commerce.utils.parentDatabase
 import com.soumik.e_commerce.utils.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var progressDialog: ProgressDialog
     private lateinit var auth: FirebaseAuth
+    var parentDatabase ="Users"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

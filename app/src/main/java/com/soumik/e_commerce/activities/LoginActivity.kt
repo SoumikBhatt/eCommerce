@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Base64
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
@@ -18,12 +19,11 @@ import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.soumik.e_commerce.R
+import com.soumik.e_commerce.activities.admin_activity.AdminPanelActivity
 import com.soumik.e_commerce.data.DataHandling
 import com.soumik.e_commerce.models.Users
-import com.soumik.e_commerce.utils.parentDatabase
 import com.soumik.e_commerce.utils.showToast
 import kotlinx.android.synthetic.main.activity_login.*
 import java.security.MessageDigest
@@ -34,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var progressDialog: ProgressDialog
     lateinit var callbackManager: CallbackManager
     private lateinit var auth: FirebaseAuth
+    var parentDatabase ="Users"
     val TAG = "FB_LOGIN"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,22 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         progressDialog = ProgressDialog(this)
+
+        tv_admin_panel.setOnClickListener{
+            btn_do_login.text="Login as Admin"
+            tv_admin_panel.visibility=View.INVISIBLE
+            tv_not_admin_panel.visibility=View.VISIBLE
+            bt_facebook_login.visibility=View.INVISIBLE
+            parentDatabase="Admins"
+        }
+
+        tv_not_admin_panel.setOnClickListener{
+            btn_do_login.text="Login"
+            tv_admin_panel.visibility=View.VISIBLE
+            tv_not_admin_panel.visibility=View.INVISIBLE
+            bt_facebook_login.visibility=View.VISIBLE
+            parentDatabase="Users"
+        }
 
 
 // ...
@@ -99,7 +116,6 @@ class LoginActivity : AppCompatActivity() {
             Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT))
         }
     }
-
 
     private fun doFBLogin() {
         // Initialize Facebook Login button
@@ -164,12 +180,12 @@ class LoginActivity : AppCompatActivity() {
                 progressDialog.setCanceledOnTouchOutside(false)
                 progressDialog.show()
 
-                allowAcess(phoneNumber, password)
+                allowAccess(phoneNumber, password)
             }
         }
     }
 
-    private fun allowAcess(phoneNumber: String, password: String) {
+    private fun allowAccess(phoneNumber: String, password: String) {
 
         if (cb_remember_me.isChecked) {
             DataHandling.setUserPhoneNumber(phoneNumber)
@@ -190,10 +206,20 @@ class LoginActivity : AppCompatActivity() {
 
                     if (userData?.Phone?.equals(phoneNumber)!!) {
                         if (userData?.Password?.equals(password)) {
-                            showToast(applicationContext, "Logged In Successfully!")
-                            progressDialog.dismiss()
-                            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
-                            finish()
+
+                            if(parentDatabase == "Admins") {
+                                showToast(applicationContext, "Welcome Admin, You are Logged In!")
+                                Log.i("HHH","HIIII")
+                                progressDialog.dismiss()
+                                startActivity(Intent(this@LoginActivity, AdminPanelActivity::class.java))
+                                finish()
+                            } else if(parentDatabase == "Users") {
+                                showToast(applicationContext, "Logged In Successfully!")
+                                progressDialog.dismiss()
+                                startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+                                finish()
+                            }
+
                         } else {
                             showToast(applicationContext, "Incorrect Password")
                             progressDialog.dismiss()
