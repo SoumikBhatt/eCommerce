@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.soumik.e_commerce.R
 import com.soumik.e_commerce.activities.admin_activity.AdminPanelActivity
+import com.soumik.e_commerce.activities.admin_activity.CatergoryActivity
 import com.soumik.e_commerce.data.DataHandling
 import com.soumik.e_commerce.models.Users
 import com.soumik.e_commerce.utils.showToast
@@ -211,7 +212,7 @@ class LoginActivity : AppCompatActivity() {
                                 showToast(applicationContext, "Welcome Admin, You are Logged In!")
                                 Log.i("HHH","HIIII")
                                 progressDialog.dismiss()
-                                startActivity(Intent(this@LoginActivity, AdminPanelActivity::class.java))
+                                startActivity(Intent(this@LoginActivity, CatergoryActivity::class.java))
                                 finish()
                             } else if(parentDatabase == "Users") {
                                 showToast(applicationContext, "Logged In Successfully!")

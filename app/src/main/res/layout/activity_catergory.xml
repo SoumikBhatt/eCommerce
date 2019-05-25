@@ -35,26 +35,26 @@
 
             <ImageView
                     android:id="@+id/iv_cat_t_shirts"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/tshirts"/>
 
             <ImageView
                     android:id="@+id/iv_cat_sports_shirts"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/sports"/>
 
             <ImageView
                     android:id="@+id/iv_cat_female_shirts"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/female_dresses"/>
 
             <ImageView
                     android:id="@+id/iv_cat_sweathers"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/sweather"/>
 
         </LinearLayout>
@@ -68,26 +68,26 @@
 
             <ImageView
                     android:id="@+id/iv_cat_glass"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/glasses"/>
 
             <ImageView
                     android:id="@+id/iv_cat_bag"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/purses_bags"/>
 
             <ImageView
                     android:id="@+id/iv_cat_hat"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/hats"/>
 
             <ImageView
                     android:id="@+id/iv_cat_shoes"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/shoess"/>
 
         </LinearLayout>
@@ -101,30 +101,30 @@
 
             <ImageView
                     android:id="@+id/iv_cat_headphones"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/headphoness"/>
 
             <ImageView
                     android:id="@+id/iv_cat_laptops"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/laptops"/>
 
             <ImageView
                     android:id="@+id/iv_cat_watches"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/watches"/>
 
             <ImageView
                     android:id="@+id/iv_cat_mobiles"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/mobiles"/>
 
         </LinearLayout>
     </LinearLayout>
     </ScrollView>
-    
+
 </LinearLayout>
