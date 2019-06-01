@@ -25,6 +25,7 @@ import com.soumik.e_commerce.activities.admin_activity.AdminPanelActivity
 import com.soumik.e_commerce.activities.admin_activity.CatergoryActivity
 import com.soumik.e_commerce.data.DataHandling
 import com.soumik.e_commerce.models.Users
+import com.soumik.e_commerce.prevalent.Prevalent
 import com.soumik.e_commerce.utils.showToast
 import kotlinx.android.synthetic.main.activity_login.*
 import java.security.MessageDigest
@@ -37,6 +38,10 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     var parentDatabase ="Users"
     val TAG = "FB_LOGIN"
+
+    companion object{
+        lateinit var onlineUserName:String
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -217,6 +222,11 @@ class LoginActivity : AppCompatActivity() {
                             } else if(parentDatabase == "Users") {
                                 showToast(applicationContext, "Logged In Successfully!")
                                 progressDialog.dismiss()
+                                Prevalent.onlineUsers=userData
+
+                                onlineUserName = userData.Name
+                                Log.i("111",""+ onlineUserName)
+                                Log.i("111",""+userData.Password)
                                 startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                                 finish()
                             }
