@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
     val TAG = "FB_LOGIN"
 
     companion object{
-        lateinit var onlineUserName:String
+         var onlineUserName:String = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
