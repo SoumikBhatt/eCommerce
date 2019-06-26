@@ -68,9 +68,16 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var userNameTV = headerView.tv_user_profile_name
         var userProfileIcon= headerView.iv_user_profile_image
 
+        var imageLink:String = LoginActivity.onlineUserImage
+
+        Glide.with(applicationContext)
+            .load(imageLink)
+            .into(userProfileIcon)
+
 
         var name = LoginActivity.onlineUserName
         Log.i("1121",""+name)
+        Log.i("1121", "Image: $imageLink")
 
         userNameTV?.text = name
     }
@@ -152,7 +159,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 auth.signOut()
                 LoginManager.getInstance().logOut()
                 startActivity(Intent(this,MainActivity::class.java))
-                finish()
+                finishAffinity()
             }
         }
 

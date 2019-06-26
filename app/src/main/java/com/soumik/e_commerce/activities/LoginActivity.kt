@@ -41,6 +41,8 @@ class LoginActivity : AppCompatActivity() {
 
     companion object{
          var onlineUserName:String = ""
+         var onlineUserPhone:String = ""
+         var onlineUserImage:String = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -225,6 +227,8 @@ class LoginActivity : AppCompatActivity() {
                                 Prevalent.onlineUsers=userData
 
                                 onlineUserName = userData.Name
+                                onlineUserPhone = userData.Phone
+                                onlineUserImage = userData.images
                                 Log.i("111",""+ onlineUserName)
                                 Log.i("111",""+userData.Password)
                                 startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
