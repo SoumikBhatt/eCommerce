@@ -108,7 +108,7 @@ class SettingsActivity : AppCompatActivity() {
 
         reference.child(LoginActivity.onlineUserPhone).updateChildren(updateMap)
 
-        startActivity(Intent(this,MainActivity::class.java))
+        startActivity(Intent(this,HomeActivity::class.java))
         showToast(applicationContext,"Account Info updated Successfully")
         finish()
     }
@@ -159,7 +159,7 @@ class SettingsActivity : AppCompatActivity() {
                     reference.child(LoginActivity.onlineUserPhone).updateChildren(updateMap)
 
                     hideProgressDialog(progressDialog)
-                    startActivity(Intent(this,MainActivity::class.java))
+                    startActivity(Intent(this,HomeActivity::class.java))
                     showToast(applicationContext,"Account Info updated Successfully")
                     finish()
                 } else{

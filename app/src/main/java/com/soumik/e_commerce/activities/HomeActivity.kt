@@ -107,6 +107,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Glide.with(applicationContext)
                     .load(model.image)
                     .into(holder.productIcon)
+
+                holder.itemView.setOnClickListener{
+                    var intent = Intent(this@HomeActivity,ProductDetailsActivity::class.java)
+                    intent.putExtra(ProductDetailsActivity.PRODUCT_ID,model.pid)
+                    startActivity(intent)
+                }
             }
         }
 
